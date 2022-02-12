@@ -1,0 +1,12 @@
+#Created by Logan Bock, used for client's netplan configuration
+network:
+	version: 2
+	renderer: networkd
+	ethernets:
+		enp0s3: #Logan Bock: network interface for client network, connected to gateway VM
+			dhcp4: no
+			addresses: [192.168.0.10/24]
+			gateway4: 192.168.0.100 #Logan Bock: IP address of gateway VM
+			nameservers:
+				addresses: [8.8.8.8, 8.8.4.4]
+	
